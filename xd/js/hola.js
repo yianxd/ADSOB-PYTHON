@@ -1,3 +1,3 @@
 var a = "ten un bonito dia owo";
-console.log(a);
+document.write(a);
 alert(a);
