@@ -1,6 +1,5 @@
 import random
 a=[]
-aux=[]
 con=0
 num=int(input())
 for i in range(random.randint(10,25)):

@@ -13,9 +13,6 @@ for i in range(100,999,1):
         print(i)
     else:
         print("no existe")
-        
-
-
 
 
 
