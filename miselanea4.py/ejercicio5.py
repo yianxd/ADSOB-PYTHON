@@ -9,6 +9,7 @@ for i in range(len(a)):
         con+=1
     else:
         continue
-a.append(num)
+if num not in a:
+    a.append(num)
 print("el numero esta: ",con)
 print("la lista se a acutalizado",a)
