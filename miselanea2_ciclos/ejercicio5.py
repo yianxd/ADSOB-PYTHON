@@ -1,17 +1,14 @@
-num=1
-cont2=0
-while num<=1000:
-    cont=1
-    x=0
-    while cont<=num:
-        if num%cont==0:
-            x+=1
-        cont+=1
-    if x==2:
-        print(num)
-        cont2+=1
-    num=+1
-print("Hay",cont2,"numeros primos")
+con=0
+for i in range(100):
+    cont=0
+    for j in range(1,i):
+        if i%j==0:
+            cont+=1
+    if cont==1:
+        print(i)
+        con+=1
+
+print("Hay",con,"numeros primos")
 
 """
 numero=1

@@ -16,7 +16,7 @@ def prom_listas(lista):
 
 def mayor_menos_prom(lista):
     prom=prom_listas(lista)
-    for i in range(len(a)):
+    for i in range(len(lista)):
         if lista[i]==prom:
             print(lista[i],"el valor es igual al promedio")
         elif lista[i]<prom:

@@ -10,5 +10,10 @@ def temperatura(celius):
     print("tempeturatura en kelvin=",celius+273.15)
     print("temperatura en rankine=",(celius*9/5)+491.67)
 
-celius=float(input("Ingrese la temperatura en celius actua: "))
-temperatura(celius)
+
+def any():
+    print(var +1,end="")
+
+var=1
+any()
+print(var)

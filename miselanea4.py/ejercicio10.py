@@ -16,4 +16,5 @@ print(a1)
 for i in range(len(a1)):
     a1[i]=a1[i]**2
     suma+=a1[i]
+
 print("la desviacion estandar es: ",(suma/len(a)-1)**0.5)
