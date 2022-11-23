@@ -1,11 +1,17 @@
 dic={
-    "nombre":{
-        "canciones":{
-                "cancion":{
-                    "genero":"duracion"}
+    "a":{
+        "b":{
+            1:{},2:{},3:{}
+        },
+        "b1":{
+            1:{},2:{},3:{},2:{}
+        },
+        "b3":{
+            1:{},2:{},3:{},2:{},4:{}
         }
     }
 }
 
-a=dic["nombre"]["canciones"]["uwu"]={"si":"no"}
-dic["nombre"]["canciones"]["xd"]={"si":"no"}
+a=0
+for i in dic["a"]:
+    print(i)

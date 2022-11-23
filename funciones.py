@@ -27,7 +27,17 @@ def delete_a(lista,artista):
         print("el artista no se encuentra")
 
 #def buscar_c(lista,cancion):
-    for i in lista["playlist"]:
-        for j in lista["playlist"][i]:
-            if cancion in lista["playlist"][i]:
-                return i
+    #for i in lista["playlist"]:
+        #for j in lista["playlist"][i]:
+            #if cancion in lista["playlist"][i]:
+                #return i
+
+def orga(lista,a=""):
+    a=""
+    a=sorted(lista["playlist"].items())
+    return a    
+            
+        
+        
+    
+
