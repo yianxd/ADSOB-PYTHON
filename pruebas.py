@@ -1,17 +1,33 @@
 dic={
     "a":{
         "b":{
-            1:{},2:{},3:{}
+            "a":{
+                "v":{
+                    "a":1
+                }
+            }
         },
         "b1":{
-            1:{},2:{},3:{},2:{}
-        },
-        "b3":{
-            1:{},2:{},3:{},2:{},4:{}
+            "v":{
+                "e":{
+                    "a":2
+                }
+            }
         }
     }
 }
 
-a=0
+
+a,a2=0,0
 for i in dic["a"]:
-    print(i)
+    for k in dic["a"][i]:
+        for l in dic["a"][i][k]:
+            for j in dic["a"][i][k][l].values():
+                print(l)
+                a=j
+                if a2<a:
+                 a2=j
+                else:
+                 a=a2
+print(a2)
+print(a)
