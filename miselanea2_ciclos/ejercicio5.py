@@ -1,5 +1,5 @@
 con=0
-for i in range(100):
+for i in range(1001):
     cont=0
     for j in range(1,i):
         if i%j==0:
