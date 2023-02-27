@@ -21,7 +21,7 @@ def try_syntax(numerator, denominator): #determina una funcion de nombre con el 
     try: #inicio de bloque try
         print(f'In the try block: {numerator}/{denominator}') #imprime por pantalla una plantilla literal con el mismo dado y la variable numerator y denominator 
         result = numerator / denominator #guarda el resultado la division numerator y denominator
-    except ZeroDivisionError as zde: #bloque expect que se da en el caso de ser ZeroDivisonError y se le dara el "apado" de zde
+    except ZeroDivisionError as zde: #bloque expect que se da en el caso de ser ZeroDivisonError y se le dara el "apodo" de zde
         print(zde) #impreme el error
     else: #en caso no entrar en el bloque except entra  por aqui
         print('The result is:', result) #imprime por pantalla el mensaje entre comillas y la variable result
@@ -42,7 +42,7 @@ def edad(): #inicio de la funcion
         print("La edad debe ser un valor numerico...") #mensaje por pantalla
         edad() #vuelve a entrar en la funcion creacion un bucle
     else: #se dara en caso que no entre al except
-        print('Viene por el else') #xd
+        print('Viene por el else') #
 
 edad() #llamado de la funcion
 
