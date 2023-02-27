@@ -29,8 +29,22 @@ def try_syntax(numerator, denominator): #determina una funcion de nombre con el 
     finally: #finally siempre se ejecutara
         print('Exiting') #imprime por pantalla el mensaje entre comillas
         #return "Fallo por zero" 
-#print(try_syntax(12, 4)) #
-print(try_syntax(11, 0))
+#print(try_syntax(12, 4)) #envia parametros a la funcion
+print(try_syntax(11, 0)) #envia paramatros a la funcion para entre a except
+
+def edad(): #inicio de la funcion
+    try:  #inicio del bloque try
+        tuedad=int(input("introduce tu edad")) #guarda en una variable lo que se introduzca por teclado 
+        print(f'tu edad es  {tuedad}') #imprime por pantalla una plantilla literal con la variable y el texto dado
+        #print('Tu edad es ',tuedad) #imprime por pantalla concatenando un string y una variable tipo int
+    except ValueError as e:    #en caso que aparezca un ValueError entrara aqui y se le dara el apodo de e
+        print(e) #imprime el error
+        print("La edad debe ser un valor numerico...") #mensaje por pantalla
+        edad() #vuelve a entrar en la funcion creacion un bucle
+    else: #se dara en caso que no entre al except
+        print('Viene por el else') #xd
+
+edad() #llamado de la funcion
 
     
 
