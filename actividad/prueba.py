@@ -1,3 +1,5 @@
+from datetime import *
+
 class Usuarios:
     num_u=0
     def __init__(self,id,name,age,brithDay,contactnum,password):
@@ -12,57 +14,52 @@ class Usuarios:
     def getPassword(self):
         return self.__password
     
-    def actualizarAge(self,NewName):
+    def actualizarName(self,NewName):
         self.name = NewName
     
     def actualizarNum(self,NewNum):
-            self.contactnum = NewNum
+            self.contactnum = Newnum
     
-    def actualizarName(self,NewAge):
+    def actualizarAge(self,NewAge):
             self.name = NewAge
             
-    def actualizarName(self,NewName):
-            self.__name = NewName
+    def actualizarPassword(self,NewPass):
+            self.__name = NewPass
 
-class Instructors(Usuarios):
+
+class Instructor(Usuarios):
     num_ins=0
-    def __init__(self,id,name,contactnum,password,credentials):
-        Usuarios().__init__(self,id,name,contactnum,password)
-        self.__class_.num_u+=1
+    def __init__(self, id, name, age, brithDay, contactnum,password,credentials):
+        Usuarios.__init__(self,id, name, age, brithDay, contactnum,password)
+        self.__class__.num_ins+=1
+        self.credentials=credentials
         self.courser=[]
-        self.credentials = credentials
-        self.__username="instructorN" #buscar manera de usar la variable de clase para generar el usuario
-        print("")
+        self.__username="instructorN"+str(self.__class__.num_ins) #buscar manera de usar la variable de clase para generar el usuario
         
     def verCredenciales(self):
-        return self.__username, self.__password
-    
+        print(f"su username es: {self.__username}")
+
 class Students(Usuarios):
     num_st=0
-    def __init__(self,id,name,contactnum,username,password):
-        self.couser = []
+    def __init__(self, id, name, age, brithDay, contactnum, password):
         self.__class__.num_st+=1
-        Usuarios().__init__(self,id,name,contactnum,username,password)
-        self.__username="EstudianteN" #buscar la manera de usar la variable de clase para generar el usuario
-    
+        Usuarios.__init__(self, id, name, age, brithDay, contactnum, password)
+        self.courser=[]
+        self.__username="EstudianteN"+str(self.__class__.num_st)
+
     def verCredenciales(self):
-        return self.__username,self.__password
-    
-    def EliminarCursos(self,curso): 
-        if curso in self.couser:
-            self.couser.remove(curso)
-            return self.couser
+            print(f"su username es: {self.__username}")
 
-        
-class Trasactions:
-    def __init__(self,id,datails,date):
-        self.id = id
-        self.datails = datails
-        self.date = date
-        
-    def processDebit(self):
-        pass 
+    def getCourse(self,cursos):
+        for i in cursos:
+            print(i.description,i.yearlevel)
 
+class Enrollment:
+    def __init__(self,id,details,requirements):
+        self.id=id
+        self.details=details
+        self.requirements=requirements
+        self.date=datetime.today()
 
 class Subjects:
     def __init__(self,id,name,description,schedule):
@@ -71,19 +68,43 @@ class Subjects:
         self.description = description
         self.instructor=[]
         self.schedule=schedule
+
+    def addInstructor(self,inst):
+        self.instructor.append(inst)
+
         
 class Course:
     def __init__(self,id,description,date,yearlevel):
         self.id=id
-        self.canestudiante=[]
+        self.numStudents=[]
         self.description=description
         self.date=date
+        self.enrollments=[]
+        self.c_subjets=[]
         self.yearlevel=yearlevel
-        
 
-class Enrollment:
-    def __init__(self,id,details,requirements,date):
-        self.id=id
-        self.details=details
-        self.requirements=requirements
-        self.date=date
+    def generate_enrollment(self,id, details, requirements):
+        if len(self.numStudents)<=6:
+            enrol=Enrollment(self.id, details, requirements)
+            self.enrollments.append(enrol)
+        else:
+            print("cantidad maxima de estudiantes")
+
+    def addSubjets(self,subj):
+        self.c_subjets.append(subj)
+
+
+ob1=Instructor(12, "a", 31, "as22", 13213, "asafdsd","algo con eso")
+ob2=Instructor(13, "av", 32, "as2d2", 13214, "assfdsd","algo con eso")
+ob3=Students(12, "b", "18", "1241", 13223, "safsfdfs")
+curso1=Course(1, "python intermedio","12/12/12", "tercerTrimestre")
+curso2=Course(2,"java god", "12/11/12", "CuartoTrimestre")
+list_course=[curso1,curso2]
+print(ob1.credentials)
+#ob3.agregarCursos(curso1)
+#ob3.verCredenciales()
+#ob1.verCredenciales()
+#ob2.verCredenciales()
+#ob3.getCourse(list_course)
+#OOP=Subjects(212, "OOP", "En este curso se vera todo lo relacionado con programacion orientada a objetos", "cronograma")
+#curso1.addSubjets(OOP)
