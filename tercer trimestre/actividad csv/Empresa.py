@@ -10,6 +10,8 @@ class empresa:
         self.__industry=industry
         self.__numE=numE
 
+    def getIndex(self):
+        return self.__index
     def verTodo(self):
         return self.__index+" "+self.__oId+" "+self.__name+" "+self.__website+" "+self.__country+" "+self.__founded+" "+self.__industry+" "+self.__numE
     

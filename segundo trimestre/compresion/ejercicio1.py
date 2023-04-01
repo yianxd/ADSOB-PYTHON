@@ -25,4 +25,4 @@ print("promedio del tercio 1 es: ",t1/len(a4))
 print("promedio del tercio 2 es: ",t2/len(a5))
 print("promedio del tercio 3 es: ",t3/len(a6))
 
-a=[1,2 for i in range(3)]
+a=[1.2 for i in range(3)]
